@@ -9,7 +9,5 @@ class Solution:
         split_digits = [int(digit) for digit in str(joined_digits)]
         return split_digits
         
-
-
 solution = Solution()
 print(solution.plusOne(digits))
