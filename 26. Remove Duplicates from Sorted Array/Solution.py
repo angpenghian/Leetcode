@@ -4,16 +4,12 @@ nums = [1,1,2]
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        unique_nums = []
-        num_set = set()
-
-        for num in nums:
-            if num not in num_set:
-                unique_nums.append(num)
-                num_set.add(num)
-                
-        return (unique_nums)
-        
-        
+        replace = 1
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i-1]:
+                nums[replace] = nums[i]
+                replace += 1
+        return replace
+    
 solution = Solution()
 print(solution.removeDuplicates(nums))
